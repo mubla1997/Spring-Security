@@ -16,15 +16,11 @@ public class Usuari extends User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    private String nom;
-    private String cognom;
     private String username;
     private String passwd;
-    private int edat;
-    private byte[] photo;
+    private String fullname;
     @Nullable
-    private String correu;
+    private byte[] photo;
 
     public enum Rol{
         ROLE_ADMIN,
@@ -41,5 +37,47 @@ public class Usuari extends User{
         List <GrantedAuthority> roles = new ArrayList <>();
         roles.add(new SimpleGrantedAuthority(rol.toString()));
         return roles;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    @Nullable
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(@Nullable byte[] photo) {
+        this.photo = photo;
     }
 }

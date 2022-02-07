@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Register</title>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <title>Register</title>
 </head>
 <body>
 <h1>Register</h1>
+
+
+<form th:action="@{/register}" method="post">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td><input type="text" name="username" placeholder="Introduce username"/></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text" name="password" placeholder="Introduce password"/></td>
+        </tr>
+        <tr>
+            <td>Fullname</td>
+            <td><input type="text" name="fullname" placeholder="Introduce fullname"/></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Register"></td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>

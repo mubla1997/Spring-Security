@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<body>
+
+<h1>Login</h1>
+
+<div th:if="${param.error}">Invalid User</div>
+
+<div th:if="${param.logout}">You have been logged out</div>
+
+<form th:action="@{/login}" method="post">
+  <table>
+    <tr>
+      <td>Username</td>
+      <td><input type="text" name="username" placeholder="Introduce username"/></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="text" name="password" placeholder="Introduce password"/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" value="Sing in"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
